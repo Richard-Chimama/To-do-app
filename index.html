@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/56c6c5239f.js" crossorigin="anonymous"></script>
+    <title>To do list</title>
+    
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="header">
+            <h1>Min Dag.</h1>
+        </div>
+        <!-- This obtain input from the user -->
+        <div id="collectInput">
+            <input id="getTask" type="text" placeholder="Din syssla">        
+            <button class="allButtons" id="addTask"><i class="fa-regular fa-square-plus"></i> Lägg till</button>
+        </div>
+
+        <!-- This is display block when the user try to enter an empty string -->
+        <p id="error-message"></p>
+
+        <!-- This hold the list of all to do -->
+        <div>
+            <h3>Att göra:</h3>
+            <div class="task-list" id="task-list">
+
+            </div>
+        </div>
+
+        <!-- This hold the list of all completed task -->
+        <div>
+            <h3>Färdiga:</h3>
+            <div id="task-list-completed">
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+<!-- <script src="main.js"></script> -->
+<script src="js.js"></script>
+</html>

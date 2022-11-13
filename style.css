@@ -1,0 +1,134 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #355C7D;
+}
+
+.main-container{
+    width: 80%;
+    min-width: 300px;
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+    min-height: 80vh;
+    background-color: #725A7A;
+    font-family: 'Papyrus', serif;
+    font-size: 12px;
+    color: #fff;
+    box-shadow: 0 0 1rem #C56D86;
+}
+
+
+h1{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 36px;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 6px #FF7582;
+
+}
+
+h3{
+    margin: 1.5rem 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+.allButtons{
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: #C56D86;
+    color: #fff;
+    border: none;
+    font-size: 10px;
+}
+
+.allButtons:hover{
+    background-color: #FF7582;
+}
+
+#collectInput{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#getTask, .user-data{
+    padding: 0.2rem;
+}
+
+#getTask{
+    flex-grow: 4;
+    margin-right: 0.3rem;
+}
+
+#getTask:focus, .user-data:focus{
+    outline: 2px solid #FF7582;
+}
+
+.user-data{
+    color:#355C7D;
+    font-weight: 400;
+}
+.user-data:focus{
+    color: black;
+}
+
+.task{
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.task:hover{
+    transform: scale(1.03);
+}
+
+
+@keyframes show{
+    from{ opacity: 0.1;}
+    to{opacity: 1;}
+}
+@keyframes hide{
+    from{ opacity: 1;}
+    to{opacity: 0;}
+}
+
+.task > input{
+    flex-grow: 6;
+}
+
+.task button{
+    flex-grow: 1;
+}
+
+#error-message {
+    display: none;
+    text-align: center;
+    width: 80%;
+    color: #fff;
+    margin: 0.8rem auto;
+    padding: 0.5rem;
+    background-color: #FF7582;
+}
+
+.fa-regular{
+    margin-right: 0.5rem;
+}
+
+@media (min-width: 580px){
+    .main-container{
+        font-size: 16px;
+        padding: 2rem Clamp(1rem, 8vw,4rem);
+    }
+    #getTask, .user-data{
+        padding: 0.5rem;
+    }
+
+    .allButtons{
+        font-size: 16px; 
+        padding: 0.6rem;
+    }
+}

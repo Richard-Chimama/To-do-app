@@ -1,0 +1,11 @@
+##SPEUDO-CODE 
+  START 
+  Get data from user 
+  add the user data into todo list  
+  if the user data is done:
+        remove it from todo list   
+        add it to completed task list
+  if the user update data: 
+         update the data saved 
+  if the user delete the data:
+         remove the data from the list
