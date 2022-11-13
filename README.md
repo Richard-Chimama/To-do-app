@@ -1,12 +1,8 @@
-
-
-![to do app image]("/images/to-do.png")
-
-
+![to do app image]()
 
 ****PSEUDO-CODE**
-  START
-  Get task from user
+**  START
+Get task from user
   add the task into todo list
   if the user click the task complete done:
         remove it from todo list
@@ -15,4 +11,4 @@
          update the task
          save the update
   if the user click delete the task:
-         remove the task from the list**
+         remove the task from the list
