@@ -1,7 +1,7 @@
-![to do app image]()
+![to do app image](images/to-do.png)
 
 ****PSEUDO-CODE**
-**  START
+      START
 Get task from user
   add the task into todo list
   if the user click the task complete done:
