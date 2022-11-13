@@ -1,7 +1,7 @@
 
-```fallback
+
 ![to do app image]("/images/to-do.png")
-```
+
 
 
 ****PSEUDO-CODE**
