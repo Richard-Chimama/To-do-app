@@ -1,9 +1,9 @@
+
 ![to do app image](image/to-do.png "todo app")
 
 ****PSEUDO-CODE****
 
-  START
-
+START
 Get task from user
 
 add the task into todo list
