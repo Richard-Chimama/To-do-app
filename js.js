@@ -45,9 +45,12 @@ const toDo = {
         let button1 = this.htmlElementWithClass("button","allButtons")
         let button2 = this.htmlElementWithClass("button","allButtons")
 
+
         input.value = userData
         input.type = "text"
         input.setAttribute("disabled","")
+        input.addEventListener("keydown",(e)=> {
+            if(e.code == "Enter"){this.updateTask(e)}})
 
         button.innerText = "Ändra"
         button.insertBefore(this.htmlElementWithClass("i","fa-regular", "fa-pen-to-square"), button.firstChild)
@@ -87,16 +90,24 @@ const toDo = {
      */
     updateTask: function(e) {
         e.preventDefault()
-        let input = e.target.parentNode.firstElementChild
-        console.log(e.target.innerText) 
-        if(e.target.innerText.trim() == "Ändra"){
-            e.target.innerHTML = `<i class="fa-regular fa-pen-to-square"></i> Update`
+        let input = e.target.parentNode.children[0]
+        let change = e.target.parentNode.children[1]
+
+        if(change.innerText.trim() == "Ändra"){
+            change.innerHTML = `<i class="fa-regular fa-pen-to-square"></i> Update`
             input.removeAttribute("disabled")
             input.focus()
-        }else if(e.target.innerText.trim() == "Update"){
-            e.target.innerHTML = `<i class="fa-regular fa-pen-to-square"></i> Ändra`
-            input.setAttribute("disabled","")
-            input.blur()
+        }else if(change.innerText.trim().slice(0,6) == "Update"){
+            if(input.value.trim() == ""){
+                input.style.outline = "2px solid red"
+                change.innerHTML += `<span class="tooltip">sysslor can inte vara tom</span>`
+            }else{
+                change.innerHTML = `<i class="fa-regular fa-pen-to-square"></i> Ändra`
+                input.setAttribute("disabled","")
+                input.blur()
+                input.style.outline = "none"
+
+            }
         }
     },
 
