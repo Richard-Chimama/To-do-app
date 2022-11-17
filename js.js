@@ -1,7 +1,10 @@
 
 
 
-const toDo = { 
+const toDo = {
+    errorMessage: "Får ej skapa tomma sysslor",
+    taskList: document.getElementById("task-list"),
+    completedTaskList: document.getElementById("completed-task-list"),
     /**
      * this function add a task on the list
      * @e an event parameter that retur the value of the input
@@ -11,14 +14,22 @@ const toDo = {
         let errorMessage = document.getElementById('error-message')
         if(!e.target.parentNode.firstElementChild.value.trim()){
                     errorMessage.style.display = "block"
-                    errorMessage.innerText = "the note shoudln't be empty!"
+                    errorMessage.innerText = this.errorMessage
                 }else{
             errorMessage.style.display = "none"
-            document.getElementById("task-list").
-                appendChild(this.createTodoListElement(e.target.parentNode.firstElementChild.value));
+            this.taskList.appendChild(
+                this.createTodoListElement(e.target.parentNode.firstElementChild.value));
         }
         e.target.parentNode.firstElementChild.value = ""
     }, 
+
+    deleteAllTasks: function(element){
+        while(element.lastElementChild){
+            element.removeChild(element.lastElementChild)
+        }
+        
+       
+    },
 
     htmlElementWithClass: function(...classValues){
         let element = document.createElement(classValues[0])
@@ -79,8 +90,7 @@ const toDo = {
      */
     completedTask: function(e) {
         e.target.parentNode.remove()
-        document.getElementById("task-list-completed").
-                            appendChild(e.target.parentNode)
+        this.completedTaskList.appendChild(e.target.parentNode)
         e.target.parentNode.children[2].remove()
     },
 
@@ -100,7 +110,7 @@ const toDo = {
         }else if(change.innerText.trim().slice(0,6) == "Update"){
             if(input.value.trim() == ""){
                 input.style.outline = "2px solid red"
-                change.innerHTML += `<span class="tooltip">sysslor can inte vara tom</span>`
+                change.innerHTML += `<span class="tooltip">${this.errorMessage}</span>`
             }else{
                 change.innerHTML = `<i class="fa-regular fa-pen-to-square"></i> Ändra`
                 input.setAttribute("disabled","")
@@ -132,4 +142,11 @@ toDo.addTask.addEventListener('click', (e)=> toDo.addTodo(e))
 toDo.getTask = document.getElementById("getTask")
 toDo.getTask.addEventListener('keydown', (e)=> {
                     if(e.code == "Enter"){toDo.addTodo(e)}})
+
+
+toDo.deleteAllTask = document.getElementById("deleteAllTask")
+toDo.deleteAllTask.addEventListener('click', ()=>{
+    toDo.deleteAllTasks(toDo.taskList)
+    toDo.deleteAllTasks(toDo.completedTaskList)
+})
 

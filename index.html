@@ -19,13 +19,14 @@
         <div id="collectInput">
             <input id="getTask" type="text" placeholder="Din syssla">        
             <button class="allButtons" id="addTask"><i class="fa-regular fa-square-plus"></i> Lägg till</button>
+            <button class="allButtons" id="deleteAllTask"><i class="fa-regular fa-trash-can"></i> Återställ</button>
         </div>
 
         <!-- This is display block when the user try to enter an empty string -->
         <p id="error-message"></p>
 
         <!-- This hold the list of all to do -->
-        <div>
+        <div id="todo-section">
             <h3>Att göra:</h3>
             <div class="task-list" id="task-list">
 
@@ -35,7 +36,7 @@
         <!-- This hold the list of all completed task -->
         <div>
             <h3>Färdiga:</h3>
-            <div id="task-list-completed">
+            <div id="completed-task-list">
                 
             </div>
         </div>
