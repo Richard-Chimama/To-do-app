@@ -150,3 +150,4 @@ toDo.deleteAllTask.addEventListener('click', ()=>{
     toDo.deleteAllTasks(toDo.completedTaskList)
 })
 
+
